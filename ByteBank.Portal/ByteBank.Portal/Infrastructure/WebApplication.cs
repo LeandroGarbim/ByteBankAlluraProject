@@ -37,36 +37,19 @@ namespace ByteBank.Portal.Infrastructure
             var request = context.Request;
             var response = context.Response;
 
-            var path = request.Url.AbsolutePath;
-            if (path == "/Assets/css/styles.css")
-            {
-                var assembly = Assembly.GetExecutingAssembly();
-                var resourceName = "ByteBank.Portal.Assets.css.styles.css";
-                var resourceStream = assembly.GetManifestResourceStream(resourceName);
-                var bytesResource = new byte[resourceStream.Length];
-                resourceStream.Read(bytesResource, 0, bytesResource.Length);
+            var path = request.Url.AbsolutePath; 
 
-                response.ContentType = "text/css; charset=utf-8";
-                response.StatusCode = 200;
-                response.ContentLength64 = resourceStream.Length;
-                response.OutputStream.Write(bytesResource, 0, bytesResource.Length);
-                response.OutputStream.Close();
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = Utilities.ConvertPathToAssemblyName(path);
+            var resourceStream = assembly.GetManifestResourceStream(resourceName);
+            var bytesResource = new byte[resourceStream.Length];
+            resourceStream.Read(bytesResource, 0, bytesResource.Length);
 
-            }
-            else if (path == "/Assets/js/main.js")
-            {
-                var assembly = Assembly.GetExecutingAssembly();
-                var resourceName = "ByteBank.Portal.Assets.js.main.js";
-                var resourceStream = assembly.GetManifestResourceStream(resourceName);
-                var bytesResource = new byte[resourceStream.Length];
-                resourceStream.Read(bytesResource, 0, bytesResource.Length);
-
-                response.ContentType = "text/js; charset=utf-8";
-                response.StatusCode = 200;
-                response.ContentLength64 = resourceStream.Length;
-                response.OutputStream.Write(bytesResource, 0, bytesResource.Length);
-                response.OutputStream.Close();
-            }
+            response.ContentType = Utilities.GetContentType(path);
+            response.StatusCode = 200;
+            response.ContentLength64 = resourceStream.Length;
+            response.OutputStream.Write(bytesResource, 0, bytesResource.Length);
+            response.OutputStream.Close();                       
 
             httpListener.Stop();
         }
