@@ -1,0 +1,8 @@
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\obj\Debug\ByteBank.Portal.csproj.AssemblyReference.cache
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\obj\Debug\ByteBank.Portal.csproj.SuggestedBindingRedirects.cache
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\obj\Debug\ByteBank.Portal.csproj.CoreCompileInputs.cache
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\bin\Debug\ByteBank.Portal.exe.config
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\bin\Debug\ByteBank.Portal.exe
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\bin\Debug\ByteBank.Portal.pdb
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\obj\Debug\ByteBank.Portal.exe
+C:\ByteBankAlluraProject\ByteBank.Portal\ByteBank.Portal\obj\Debug\ByteBank.Portal.pdb
